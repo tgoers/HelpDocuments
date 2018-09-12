@@ -1,0 +1,76 @@
+HELP
+	https://guides.github.com/introduction/git-handbook/
+	https://stackoverflow.com/questions/1443210/updating-a-local-repository-with-changes-from-a-github-repository
+	Workflow: https://www.youtube.com/watch?v=MnUd31TvBoU
+	Branch Management: https://git-scm.com/book/en/v2/Git-Branching-Branch-Management
+	Fetch: git fetch --help
+
+WORKFLOW:
+	# ON GIT	
+	git pull origin master
+	git branch my-branch
+	git checkout my-branch
+	-- Edits
+	git add
+	git commit -m " "
+	git push --set-upstream origin my-branch
+	# ON GITHUB
+	-- Compare $ Pull request
+	-- Title and comments
+	-- Create Pull Request
+	-- Add reviewers
+	-- Merge Pull Request
+	-- Don't have to merge files immediatley, incase you are still working on it
+
+EXAMPLE: UPDATE LOCAL REPOSITORY
+	git pull origin
+
+EXAMPLE: CONTRIBUTE TO AN EXISTING REPOSITORY
+	# Change Directory
+	cd Desktop
+	# download a repository on GitHub.com to our machine
+	git clone https://github.com/me/repo.git
+
+	# change into the `repo` directory
+	cd TeamX
+
+	# create a new branch to store any new changes
+	git branch my-branch
+
+	# switch to that branch (line of development)
+	git checkout my-branch
+
+	# make changes, for example, edit `file1.md` and `file2.md` using the text editor
+
+	# stage the changed files
+	git add file1.md file2.md
+
+	# take a snapshot of the staging area (anything that's been added)
+	git commit -m "my snapshot"
+
+	# push changes to github
+	git push --set-upstream origin my-branch
+
+	
+EXAMPLE: CONTRIBUTE TO AN EXISTING BRANCH ON GITHUB
+	# assumption: a project called `TeamX` already exists on the machine, and a new branch has been pushed to GitHub.com since the last time changes were made locally
+
+	# change into the `repo` directory
+	cd TeamX
+
+	# update all remote tracking branches, and the currently checked out branch
+	git pull
+
+	# change into the existing branch called `feature-a`
+	git checkout feature-a
+
+	# make changes, for example, edit `file1.md` using the text editor
+
+	# stage the changed file
+	git add file1.md
+
+	# take a snapshot of the staging area
+	git commit -m "edit file1"
+
+	# push changes to github
+	git push
